@@ -1,0 +1,22 @@
+{
+  "name": "backend-nicolas-reynoso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YeezyRain/Backend-Nicolas-Reynoso.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YeezyRain/Backend-Nicolas-Reynoso/issues"
+  },
+  "homepage": "https://github.com/YeezyRain/Backend-Nicolas-Reynoso#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
