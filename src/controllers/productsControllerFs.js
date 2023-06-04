@@ -1,6 +1,6 @@
+import { ProductManager } from "../dao/managers/productManager.js"
 export const productManager = new ProductManager('./src/data/productos.json')
 
-//GET products wiith optional limit
 export async function getProducts(req, res,next) {
     try {
         let products = await productManager.getProducts()
@@ -11,7 +11,6 @@ export async function getProducts(req, res,next) {
     }
 }
 
-//GET one product by ID
 export async function getProduct(req, res,next) {
     try {
         const {pid} = req.params
@@ -22,7 +21,6 @@ export async function getProduct(req, res,next) {
     }
 }
 
-//ADD new product
 export async function addProduct(req, res,next) {
     try {
         await productManager.addProduct(req.body)
@@ -32,7 +30,6 @@ export async function addProduct(req, res,next) {
     }
 }
 
-//UPDATE product
 export async function putProduct(req, res,next) {
     try {
         await productManager.updateProduct(req.params.pid, req.body)
@@ -42,7 +39,6 @@ export async function putProduct(req, res,next) {
     }
 }
 
-//DELETE product
 export async function deleteProduct(req, res,next) {
     try {
         await productManager.deleteProduct(req.params.pid)
