@@ -1,11 +1,11 @@
 import { Router } from "express"
 import { productsManager } from "../dao/models/productsShema.js"
 import { cartsManager } from "../dao/models/cartsShema.js"
-/* import { productManager } from "../controllers/productsController.js" */
+
 
 export const viewsRouter = Router()
 
-//GET cart by id
+
 viewsRouter.get('/', async (req, res, next) => {
     let products = await productsManager.getAll()
     res.render('home.hbs', {
@@ -20,8 +20,7 @@ viewsRouter.get('/cart', async (req, res, next) => {
     res.render('cart.hbs', {
         titulo: 'Carrito',
         encabezado: 'Carrito',
-        /* cart,
-        hayCarrito: cart.length > 0 */
+
     })
 })
 
@@ -80,7 +79,7 @@ viewsRouter.get('/Chat', async (req, res, next) => {
 
 viewsRouter.get('/about', async (req, res, next) => {
     const listado = ['hola', 'chau']
-    /* const listado = [] */
+    
     res.render('list.hbs', {
         titulo: 'About',
         encabezado: 'Acerca de mi',
