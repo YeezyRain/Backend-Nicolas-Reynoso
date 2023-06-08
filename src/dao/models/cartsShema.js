@@ -6,48 +6,6 @@ const schemaCarts = new mongoose.Schema({
     products: { type: Object, required: true }
 }, { versionKey: false })
 
-class CartsManager {
-    #cartsDb
-    constructor() {
-        this.#cartsDb = mongoose.model('carts', schemaCarts)
-    }
-    async addProducts(cid, pid) {
-        const arrayCarts = await this.getAll()
-        const arrayProducts = await productsManager.getAll()
-        const productVerify = arrayProducts.filter(item => item._id == pid)
-        if (productVerify.length === 0) throw new Error('ID no existe')
-        console.log('first')
-        let cart = arrayCarts.filter(item => item._id == cid)
-        cart = cart[0]
-        if (cart.length === 0) throw new Error('ID no existe')
-        let product = cart.products.find(item => item.pid == pid)
-        console.log(product)
-        if (!product) {
-            console.log('asdfasdfasdf')
-            cart.products.push({ pid: pid, quantity: 1 })
-        } else {
-            const pidx = cart.products.indexOf(product)
-            cart.products[pidx].quantity += 1
-            console.log(cart.products[pidx].quantity)
-        }
-        await this.#cartsDb.findOneAndUpdate({ _id: cid }, { products: cart.products }).lean()
-        console.log('Producto actualizado/agregado')
-    }
-    async addCart() {
-        const newCart = await this.#cartsDb.create({ products: [] })
-        await io.on('connection', async clientSocket => {
-            clientSocket.emit('newCart', newCart)
-        })
-        return newCart
-    }
-    async getAll() {
-        const allCarts = await this.#cartsDb.find({}).lean()
-        return allCarts
-    }
-    async getByID(id) {
-        const cart = await this.#cartsDb.findById(id).lean()
-        return cart
-    }
-}
+const CartsModel = db.model(collection, schemaCarts);
 
-export const cartsManager = new CartsManager()
+module.exports = CartsModel;
