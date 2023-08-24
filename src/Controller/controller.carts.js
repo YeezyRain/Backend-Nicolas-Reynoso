@@ -1,13 +1,13 @@
 const { Router } = require("express");
 const mongoose = require("mongoose");
-const Cart = require("../../models/Carts.model");
-const Products = require("../../models/Products.model");
-const userAcces = require("../../middlewares/userAccess.middleware");
-const cartsDao = require("../carts.dao");
-const ticketsDao = require("../tickets.dao");
+const Cart = require("../models/Carts.model");
+const Products = require("../models/Products.model");
+const userAcces = require("../middlewares/userAccess.middleware");
+const cartsDao = require("../DAO/carts.dao");
+const ticketsDao = require("../DAO/tickets.dao");
 const uuid = require("uuid");
-const ErrorRepository = require("../repositories/errors.repository");
-const logger = require("../../config/logger.config");
+const ErrorRepository = require("../DAO/repositories/carts.repository");
+const logger = require("../config/logger.config");
 const router = Router();
 
 router.post("/", userAcces, async (req, res, next) => {

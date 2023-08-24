@@ -1,14 +1,14 @@
 const { Router } = require("express");
-const Products = require("../../models/Products.model");
-const Cart = require("../../models/Carts.model");
+const Products = require("../models/Products.model");
+const Cart = require("../models/Carts.model");
 const router = Router();
-const privateAccess = require("../../middlewares/privateAccess.middleware");
-const adminAccess = require("../../middlewares/adminAccess.middleware");
-const userAcces = require("../../middlewares/userAccess.middleware");
-const productsDao = require("../products.dao");
-const logger = require("../../config/logger.config");
-const ErrorRepository = require("../repositories/errors.repository");
-const mailerDao = require("../mailer.dao");
+const privateAccess = require("../middlewares/privateAccess.middleware");
+const adminAccess = require("../middlewares/adminAccess.middleware");
+const userAcces = require("../middlewares/userAccess.middleware");
+const productsDao = require("../DAO/products.dao");
+const logger = require("../config/logger.config");
+const ErrorRepository = require("../DAO/repositories/errors.repository");
+const mailerDao = require("../DAO/mailer.dao");
 
 router.get("/", privateAccess, async (req, res, next) => {
   try {

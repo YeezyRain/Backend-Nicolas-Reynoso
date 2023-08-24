@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const passport = require("passport");
-const logger = require("../../config/logger.config");
+const logger = require("../config/logger.config");
 
 const router = Router();
 

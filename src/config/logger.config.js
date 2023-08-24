@@ -1,5 +1,5 @@
 const winston = require("winston");
-const { dev_env } = require("./app.config");
+const { dev_env } = require("../config/app.config");
 
 const developmentLogger = winston.createLogger({
   levels: {

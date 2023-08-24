@@ -1,15 +1,15 @@
 const { Router } = require("express");
 const router = Router();
-const UserDTO = require("../DTO/users.dto");
+const UserDTO = require("../DAO/DTO/users.dto");
 const moment = require("moment");
-const userDao = require("../users.dao");
-const ErrorRepository = require("../repositories/errors.repository");
-const logger = require("../../config/logger.config");
-const Users = require("../../models/Users.model");
+const userDao = require("../DAO/users.dao");
+const ErrorRepository = require("../DAO/repositories/errors.repository");
+const logger = require("../config/logger.config");
+const Users = require("../models/Users.model");
 const path = require("path");
-const multerUpload = require("../../utils/multer.utils.js");
-const mailerDao = require("../mailer.dao");
-const adminAccess = require("../../middlewares/adminAccess.middleware");
+const multerUpload = require("../utils/multer.utils.js");
+const mailerDao = require("../DAO/mailer.dao");
+const adminAccess = require("../middlewares/adminAccess.middleware");
 
 router.get("/", async (req, res, next) => {
   try {

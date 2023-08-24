@@ -1,12 +1,12 @@
-const productsController = require("../DAO/Controller/controller.products");
-const cartController = require("../DAO/Controller/controller.carts");
-const registerController = require("../DAO/Controller/controller.register");
-const authController = require("../DAO/Controller/controller.auth");
-const userController = require("../DAO/Controller/controller.users");
-const messagesController = require("../DAO/Controller/controller.messages");
-const loggerTest = require("../DAO/Controller/constroller.loggerTest");
-const ErrorRepository = require("../DAO/repositories/errors.repository");
-const adminPanel = require("../DAO/Controller/controller.adminPanel");
+const productsController = require("../Controller/controller.products");
+const cartController = require("../Controller/controller.carts");
+const registerController = require("../Controller/controller.register");
+const authController = require("../Controller/controller.auth");
+const userController = require("../Controller/controller.users");
+const messagesController = require("../Controller/controller.messages");
+const loggerTest = require("../Controller/constroller.loggerTest");
+const ErrorRepository = require("../repositories/errors.repository");
+const adminPanel = require("../Controller/controller.adminPanel");
 
 const errorHandler = (err, req, res, next) => {
   if (err instanceof ErrorRepository) {

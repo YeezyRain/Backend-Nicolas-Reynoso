@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const passport = require("passport");
-const logger = require("../../config/logger.config");
-const Users = require("../../models/Users.model");
-const ErrorRepository = require("../repositories/errors.repository");
-const ResetPasswordRepository = require("../repositories/resetPassword.repository");
+const logger = require("../config/logger.config");
+const Users = require("../models/Users.model");
+const ErrorRepository = require("../DAO/repositories/errors.repository");
+const ResetPasswordRepository = require("../DAO/repositories/resetPassword.repository");
 
 const router = Router();
 
