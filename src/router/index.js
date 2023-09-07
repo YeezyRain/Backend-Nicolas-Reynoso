@@ -5,7 +5,7 @@ const authController = require("../Controller/controller.auth");
 const userController = require("../Controller/controller.users");
 const messagesController = require("../Controller/controller.messages");
 const loggerTest = require("../Controller/constroller.loggerTest");
-const ErrorRepository = require("../repositories/errors.repository");
+const ErrorRepository = require("../DAO/repositories/errors.repository");
 const adminPanel = require("../Controller/controller.adminPanel");
 
 const errorHandler = (err, req, res, next) => {
