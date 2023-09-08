@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+console.log (process.env)
 module.exports = {
   dbAdmin: process.env.DB_ADMIN,
   dbPassword: process.env.DB_PASSWORD,
